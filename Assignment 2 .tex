@@ -55,6 +55,10 @@
 %\usepackage{multicol}
 \usepackage{chngcntr}
 %\usepackage{enumerate}
+\newcommand{\MyLeftRoundBracket}{(}                                                                         
+\newcommand{\MyRightRoundBracket}{)}                                                                        
+\newcommand{\MyLeftSquareBracket}{[}                                                                        
+\newcommand{\MyRightSquareBracket}{]} 
 
 %\usepackage{wasysym}
 %\newcounter{MYtempeqncnt}
@@ -208,11 +212,27 @@ m_1= 1 , m_2 =-2\\
 \end{align}
 Equating the product of lines to the equation(2.0.2)
 \begin{align}
-(\vec{n_1}^T\vec{x}-c_1)(\vec{n_2}^T\vec{x}-c_2)=
-\vec{x}^T\vec{V}\vec{x}+2\vec{u}^T\vec{x}+f \\
-c_2\vec{n_1}+c_1\vec{n_2}=-2\vec{u}\\ c_2\myvec{-1\\1}+c_1\myvec{2\\1}=-2\myvec{\frac{-5}{2}\frac{-1}{2}}\\
--c_2+2c_1=5 , c_2+c_1=1\\
-c_1=2 , c_2=-1
+(\vec{n_1}^T\vec{x}-c_1)(\vec{n_2}^T\vec{x}-c_2) =
+\vec{x}^T\vec{V}\vec{x}+2\vec{u}^T\vec{x}+f 
+\end{align}
+\begin{align}
+c_2\vec{n_1}+c_1\vec{n_2} =-2\vec{u}
+ \end{align}
+ \begin{align}
+ c_2\myvec{-1\\1}+c_1\myvec{2\\1} =-2\myvec{\frac{-5}{2}\frac{-1}{2}}
+ \end{align}
+ \begin{align}
+ \myvec{1&1\\2&-1}\myvec{c_1\\c_2}=\myvec{1\\5}
+ \end{align}
+ consider the augmented matrix
+ \begin{align}
+\myvec{1&1&1\\2&-1&5}\\
+\xleftrightarrow[R_2\leftarrow R_2/-3]{R_2\leftarrow R_2-2R_1}
+\myvec{1&1&1\\0&1&-1}\\\xleftrightarrow[]{R_1\leftarrow R_1-R_2}
+\myvec{1&0&2\\0&1&-1}
+\end{align}
+\begin{align}
+c = \myvec{2\\-1}
 \end{align}
 Therefore the equation of lines is given by 
 \begin{align}
@@ -221,9 +241,9 @@ Therefore the equation of lines is given by
 \end{align}
 consider the augmented matrix
 \begin{align}
-\myvec{-1&1&2\\2&1&-1}
-\xleftrightarrow[R_2\rightarrow R_2-2R_1]{R_1\rightarrow -R_1}
-\myvec{1&2&1\\0&1&1}\xleftrightarrow[R_1\rightarrow R_1+R_2]{R_1\rightarrow R_1/3}
+\myvec{-1&1&2\\2&1&-1}\\
+\xleftrightarrow[R_2\leftarrow R_2-2R_1]{R_1\leftarrow -R_1}
+\myvec{1&2&1\\0&1&1}\\\xleftrightarrow[R_1\leftarrow R_1+R_2]{R_1\leftarrow R_1/3}
 \myvec{1&0&-1\\0&1&1}
 \end{align}
 Therefore point of intersection is $\vec{A}=\myvec{-1\\1}.$
@@ -231,7 +251,10 @@ Therefore point of intersection is $\vec{A}=\myvec{-1\\1}.$
 Angle between two lines $\theta$ can be given by
 \begin{align}
 \cos\theta =\frac{\vec{n_1}^T\vec{n_2}}{\norm{\vec{n_1}}\norm{\vec{n_2}}}=
-\frac{\myvec{-1&1}\myvec{2\\1}}{\sqrt{\left(1\right)^2 +1} \times \sqrt{(2)^2 +1}}=\frac{-1}{\sqrt{10}}\\
+\frac{\myvec{-1&1}\myvec{2\\1}}{\sqrt{\left(1\right)^2 +1} \times \sqrt{(2)^2 +1}}
+\end{align}
+\begin{align}
+\cos\theta=\frac{-1}{\sqrt{10}}\\
 \theta = \cos^{-1}(\frac{-1}{\sqrt{10}})\implies \theta = tan^{-1}3
 \end{align}
 \begin{figure}[!ht]
