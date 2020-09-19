@@ -168,17 +168,15 @@ Prove that the following equations represents two straight lines also find their
 y^2+xy-2x^2-5x-y-2=0
 \end{align}
 \section{Solution}
+\begin{align}
+\vec{x}^T\vec{V}\vec{x}+2\vec{u}^T\vec{x}+f=0
+\end{align}
 Represents a pair of straight lines if
 \begin{align}
 \mydet{
 \vec{V}&\vec{u}^T\\
-\vec{u}&f} = 0
-\end{align}
-and can be expressed as
-\begin{align}
-\vec{x}^T\vec{V}\vec{x}+2\vec{u}^T\vec{x}+f=0 \\
-\vec{V}=\vec{V}^T=\myvec{a & b \\ b & c} ;
-\vec{u}=\myvec{d & e}
+\vec{u}&f} = 0\\
+\vec{V}=\myvec{a&b\\b&c}\vec{u}=\myvec{d\\e}
 \end{align}
 \begin{align}
 \mydet{
@@ -205,12 +203,11 @@ Let the pair of straight of lines be given by
 The slopes of the lines are given by the roots of the polynomial 
 \begin{align}
 cm^2+2bm+a=0 \\
-m_1,m_2 = \frac{-b\pm\sqrt{-\mydet{V}}}{c}\\
 m_1,m_2 = \frac{-\frac{1}{2}\pm\sqrt{\frac{9}{4}}}{1}\\
 m_1= 1 , m_2 =-2\\
 \implies\vec{n_1}=\myvec{-1\\1} and \vec{n_2}=\myvec{2\\1}
 \end{align}
-Equating the product of lines to the equation(2.0.2)
+Equating the product of lines to the equation(2.0.1)
 \begin{align}
 (\vec{n_1}^T\vec{x}-c_1)(\vec{n_2}^T\vec{x}-c_2) =
 \vec{x}^T\vec{V}\vec{x}+2\vec{u}^T\vec{x}+f 
@@ -224,7 +221,7 @@ c_2\vec{n_1}+c_1\vec{n_2} =-2\vec{u}
  \begin{align}
  \myvec{1&1\\2&-1}\myvec{c_1\\c_2}=\myvec{1\\5}
  \end{align}
- consider the augmented matrix
+ Using row reduction we get
  \begin{align}
 \myvec{1&1&1\\2&-1&5}\\
 \xleftrightarrow[R_2\leftarrow R_2/-3]{R_2\leftarrow R_2-2R_1}
@@ -232,7 +229,15 @@ c_2\vec{n_1}+c_1\vec{n_2} =-2\vec{u}
 \myvec{1&0&2\\0&1&-1}
 \end{align}
 \begin{align}
-c = \myvec{2\\-1}
+C  =\myvec{2\\-1}
+\end{align}
+ The convolution of the normal vectors, should satisfy the below condition
+ \begin{align}
+    \myvec{-1\\1}*\myvec{2\\1}=\myvec{a\\2b\\c}
+\end{align}
+The LHS part of equation(2.0.20) can be rewritten using toeplitz matrix as
+\begin{align}
+    \myvec{-1&0\\1&-1\\0&1}\myvec{2\\1}=\myvec{-2\\1\\1}=\myvec{a\\2b\\c}
 \end{align}
 Therefore the equation of lines is given by 
 \begin{align}
@@ -250,11 +255,10 @@ Therefore point of intersection is $\vec{A}=\myvec{-1\\1}.$
 \\
 Angle between two lines $\theta$ can be given by
 \begin{align}
-\cos\theta =\frac{\vec{n_1}^T\vec{n_2}}{\norm{\vec{n_1}}\norm{\vec{n_2}}}=
-\frac{\myvec{-1&1}\myvec{2\\1}}{\sqrt{\left(1\right)^2 +1} \times \sqrt{(2)^2 +1}}
+\cos\theta =\frac{\vec{n_1}^T\vec{n_2}}{\norm{\vec{n_1}}\norm{\vec{n_2}}}\\
+ \cos\theta=\frac{\myvec{-1&1}\myvec{2\\1}}{\sqrt{\left(1\right)^2 +1} \times \sqrt{(2)^2 +1}}
 \end{align}
 \begin{align}
-\cos\theta=\frac{-1}{\sqrt{10}}\\
 \theta = \cos^{-1}(\frac{-1}{\sqrt{10}})\implies \theta = tan^{-1}3
 \end{align}
 \begin{figure}[!ht]
