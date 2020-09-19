@@ -169,14 +169,9 @@ y^2+xy-2x^2-5x-y-2=0
 \end{align}
 \section{Solution}
 \begin{align}
-\vec{x}^T\vec{V}\vec{x}+2\vec{u}^T\vec{x}+f=0
-\end{align}
-Represents a pair of straight lines if
-\begin{align}
-\mydet{
-\vec{V}&\vec{u}^T\\
-\vec{u}&f} = 0\\
-\vec{V}=\myvec{a&b\\b&c}\vec{u}=\myvec{d\\e}
+\vec{V}=\myvec{a&b\\b&c}=\myvec{-2&\frac{1}{2}\\\frac{1}{2}&1}\\
+\vec{u}=\myvec{d\\e}=\myvec{\frac{-5}{2}\\\frac{-1}{2}}\\
+f=-2
 \end{align}
 \begin{align}
 \mydet{
@@ -189,6 +184,7 @@ Represents a pair of straight lines if
 \frac{1}{2}&1&\frac{-1}{2}\\
 \frac{-5}{2}&\frac{-1}{2}&-2}=0
 \end{align}
+Hence it represents the pair of straight lines.
 Now two intersecting lines are obtained when
 \begin{align}
 \mydet{V} < 0 
@@ -207,7 +203,6 @@ m_1,m_2 = \frac{-\frac{1}{2}\pm\sqrt{\frac{9}{4}}}{1}\\
 m_1= 1 , m_2 =-2\\
 \implies\vec{n_1}=\myvec{-1\\1} and \vec{n_2}=\myvec{2\\1}
 \end{align}
-Equating the product of lines to the equation(2.0.1)
 \begin{align}
 (\vec{n_1}^T\vec{x}-c_1)(\vec{n_2}^T\vec{x}-c_2) =
 \vec{x}^T\vec{V}\vec{x}+2\vec{u}^T\vec{x}+f 
